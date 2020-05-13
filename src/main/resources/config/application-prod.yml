@@ -25,7 +25,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://admin:${jhipster.registry.password}@localhost:8080/eureka/
+      defaultZone: http://admin:${jhipster.registry.password}@ocalhost:8761/eureka/
 
 management:
   metrics:
@@ -43,7 +43,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/gatewaystore
     username: postgres
-    password: andres
+    password: andres.
     hikari:
       poolName: Hikari
       auto-commit: false
