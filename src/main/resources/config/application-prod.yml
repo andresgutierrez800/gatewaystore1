@@ -12,7 +12,6 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-#: 8761
 
 logging:
   level:
@@ -25,7 +24,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://admin:${jhipster.registry.password}@ocalhost:8761/eureka/
+      defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
 management:
   metrics:
@@ -41,9 +40,9 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/gatewaystore
+    url: jdbc:postgresql://70.37.100.3:5432/gatewaystore
     username: postgres
-    password: andres.
+    password: 12345
     hikari:
       poolName: Hikari
       auto-commit: false

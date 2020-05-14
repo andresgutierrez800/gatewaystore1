@@ -12,9 +12,7 @@
 # Full reference is available at:
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
-#Name: Andres Sergio Andres Gutierrez.
-#nn:localhost:8761    ;;   http://192.168.99.100:32768/ Datosficticios: faker
-#url: /localhost:5432  5432   http://localhost:8080/    http://192.168.99.100:32774/ser
+#integrantes> Sergio, fabian, diego.
 
 logging:
   level:
@@ -35,8 +33,7 @@ spring:
     include:
       - swagger
       # Uncomment to activate TLS for the dev profile
-      #- tlsgit status nn
-
+      #- tls
   devtools:
     restart:
       enabled: true
@@ -50,7 +47,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/gatewaystore
     username: postgres
-    password: andres.
+    password: 12345
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -69,7 +66,7 @@ spring:
       hibernate.cache.hazelcast.use_lite_member: true
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev
+    contexts: dev, faker
   mail:
     host: localhost
     port: 25
