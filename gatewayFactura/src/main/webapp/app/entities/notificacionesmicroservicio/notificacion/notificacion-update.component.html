@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-notificacion-heading" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.home.createOrEditLabel">Create or edit a Notificacion</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.fecha" for="field_fecha">Fecha</label>
+                    <div class="d-flex">
+                        <input id="field_fecha" type="datetime-local" class="form-control" name="fecha" formControlName="fecha" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('fecha')!.invalid && (editForm.get('fecha')!.dirty || editForm.get('fecha')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fecha')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fecha')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.mensaje" for="field_mensaje">Mensaje</label>
+                    <input type="text" class="form-control" name="mensaje" id="field_mensaje"
+                           formControlName="mensaje"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.fechaEnviado" for="field_fechaEnviado">Fecha Enviado</label>
+                    <div class="d-flex">
+                        <input id="field_fechaEnviado" type="datetime-local" class="form-control" name="fechaEnviado" formControlName="fechaEnviado" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('fechaEnviado')!.invalid && (editForm.get('fechaEnviado')!.dirty || editForm.get('fechaEnviado')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechaEnviado')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fechaEnviado')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.userId" for="field_userId">User Id</label>
+                    <input type="number" class="form-control" name="userId" id="field_userId"
+                           formControlName="userId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.tipoNotificacion" for="field_tipoNotificacion">Tipo Notificacion</label>
+                    <select class="form-control" name="tipoNotificacion" formControlName="tipoNotificacion" id="field_tipoNotificacion">
+                        <option value="DeProductosNuevos">{{ 'gatewayFacturaApp.TipoNotificacion.DeProductosNuevos' | translate }}</option>
+                        <option value="DePromociones">{{ 'gatewayFacturaApp.TipoNotificacion.DePromociones' | translate }}</option>
+                        <option value="DeAlertas">{{ 'gatewayFacturaApp.TipoNotificacion.DeAlertas' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewayFacturaApp.notificacionesmicroservicioNotificacion.formatodenotifiaccion" for="field_formatodenotifiaccion">Formatodenotifiaccion</label>
+                    <select class="form-control" name="formatodenotifiaccion" formControlName="formatodenotifiaccion" id="field_formatodenotifiaccion">
+                        <option value="Email">{{ 'gatewayFacturaApp.FormatoDeNotificacion.Email' | translate }}</option>
+                        <option value="MensajeTelefonico">{{ 'gatewayFacturaApp.FormatoDeNotificacion.MensajeTelefonico' | translate }}</option>
+                        <option value="CartaFisica">{{ 'gatewayFacturaApp.FormatoDeNotificacion.CartaFisica' | translate }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "gatewayFacturaApp": {
+    "FormatoDeNotificacion": {
+      "null": "",
+      "Email": "Email",
+      "MensajeTelefonico": "MensajeTelefonico",
+      "CartaFisica": "CartaFisica"
+    }
+  }
+}

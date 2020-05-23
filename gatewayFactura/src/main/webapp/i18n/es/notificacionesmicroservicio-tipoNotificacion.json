@@ -1,0 +1,10 @@
+{
+  "gatewayFacturaApp": {
+    "TipoNotificacion": {
+      "null": "",
+      "DeProductosNuevos": "DeProductosNuevos",
+      "DePromociones": "DePromociones",
+      "DeAlertas": "DeAlertas"
+    }
+  }
+}
