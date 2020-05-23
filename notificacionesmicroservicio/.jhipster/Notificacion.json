@@ -1,0 +1,53 @@
+{
+    "name": "Notificacion",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "mensaje",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fechaEnviado",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "tipoNotificacion",
+            "fieldType": "TipoNotificacion",
+            "fieldValues": "DeProductosNuevos,DePromociones,DeAlertas"
+        },
+        {
+            "fieldName": "formatodenotifiaccion",
+            "fieldType": "FormatoDeNotificacion",
+            "fieldValues": "Email,MensajeTelefonico,CartaFisica"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200412153800",
+    "entityTableName": "notificacion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "gatewayFactura",
+        "notificacionesmicroservicio"
+    ],
+    "microserviceName": "notificacionesmicroservicio"
+}
