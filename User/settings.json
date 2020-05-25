@@ -1,3 +1,5 @@
 {
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

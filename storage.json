@@ -2,6 +2,7 @@
     "telemetry.machineId": "a1ea4255c2b4c01aa46579a390e5094abe20007448a5859a3c1e44695a52070b",
     "openedPathsList": {
         "workspaces3": [
+            "file:///home/sergio/desarrollo/andres/gatewaystore1",
             "file:///home/sergio/desarrollo/gatewaystore1"
         ],
         "files2": []
@@ -40,7 +41,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -49,8 +51,18 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/sergio/desarrollo/gatewaystore1",
-                                        "external": "file:///home/sergio/desarrollo/gatewaystore1",
+                                        "fsPath": "/home/sergio/desarrollo/andres/gatewaystore1",
+                                        "external": "file:///home/sergio/desarrollo/andres/gatewaystore1",
+                                        "path": "/home/sergio/desarrollo/andres/gatewaystore1",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/desarrollo/andres/gatewaystore1"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "path": "/home/sergio/desarrollo/gatewaystore1",
                                         "scheme": "file"
                                     },
@@ -575,7 +587,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1445,8 +1458,8 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/sergio/desarrollo/gatewaystore1",
-            "backupPath": "/home/sergio/desarrollo/gatewaystore1/Backups/a025dc93aa3647be45b13df22c877669",
+            "folder": "file:///home/sergio/desarrollo/andres/gatewaystore1",
+            "backupPath": "/home/sergio/desarrollo/andres/gatewaystore1/Backups/d56bdc11e3af3d7ef10ea3e3e3315530",
             "uiState": {
                 "mode": 0,
                 "x": 0,

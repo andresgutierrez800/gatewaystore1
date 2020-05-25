@@ -42,7 +42,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://70.37.100.3:5432/gatewaystore
     username: postgres
-    password: 12345
+    password: andres
     hikari:
       poolName: Hikari
       auto-commit: false

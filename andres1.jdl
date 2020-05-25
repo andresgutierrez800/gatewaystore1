@@ -1,0 +1,130 @@
+
+
+application{
+config{
+baseName gatewayFactura
+applicationType gateway
+packageName com.themakers.storeonline
+serviceDiscoveryType eureka
+authenticationType jwt
+prodDatabaseType postgresql
+devDatabaseType postgresql
+cacheProvider hazelcast
+buildTool maven
+serverPort 8080
+clientFramework angularX
+useSass true
+languages [es, en]
+nativeLanguage es
+enableTranslation true
+websocket spring-websocket
+testFrameworks [protractor]
+
+
+}
+entities *
+
+}
+
+entity FacturaDetalle{
+productoId Long //from 
+}
+
+entity Factura{
+
+fecha Instant
+valor BigDecimal
+fechaPago Instant
+}
+
+entity Cliente{
+
+nombre String
+apellido String
+identificacion String
+}
+
+entity Usuario{
+
+nombre String
+apellido String
+direccion String
+
+}
+
+relationship OneToOne{
+Usuario {user required} to User
+}
+
+relationship OneToOne{
+Factura{cliente(nombre)} to Cliente{factura} 
+}
+application {
+
+config{
+baseName notificacionesmicroservicio
+applicationType microservice 
+packageName com.themakers.notificacion
+serviceDiscoveryType eureka
+authenticationType jwt
+databaseType mongodb
+cacheProvider no
+enableHibernateCache false,
+buildTool maven
+serverPort 8082
+languages [es, en]
+}
+  entities Notificacion 
+}
+entity Notificacion{
+  fecha Instant required
+  mensaje String 
+  fechaEnviado Instant required
+  userId Long
+  tipoNotificacion TipoNotificacion
+  formatodenotifiaccion FormatoDeNotificacion
+}
+enum TipoNotificacion{
+DeProductosNuevos,
+DePromociones,
+DeAlertas
+}
+
+enum FormatoDeNotificacion{
+Email, MensajeTelefonico, CartaFisica
+}
+
+microservice Notificacion with notificacionesmicroservicio
+
+application {
+
+config{
+baseName inventariomicroservicio
+applicationType microservice 
+packageName com.themakers.inventario
+serviceDiscoveryType eureka
+authenticationType jwt
+prodDatabaseType postgresql
+devDatabaseType postgresql
+enableHibernateCache false,
+buildTool maven
+serverPort 8081
+languages [es, en]
+
+}
+entities Producto
+}
+entity Producto{
+nombre String
+precio BigDecimal
+}
+
+entity Stock{
+cantidad Long required min(0)
+}
+
+relationship ManyToOne{
+Stock {product(nombre)} to Producto
+}
+
+microservice Producto, Stock with inventariomicroservicio
