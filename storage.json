@@ -5,7 +5,10 @@
             "file:///home/sergio/desarrollo/andres/gatewaystore1",
             "file:///home/sergio/desarrollo/gatewaystore1"
         ],
-        "files2": []
+        "files2": [
+            "file:///etc/postgresql/11/main/postgresql.conf",
+            "file:///etc/postgresql/11/main/pg_hba.conf"
+        ]
     },
     "lastKnownMenubarData": {
         "menus": {
@@ -41,8 +44,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -68,6 +70,29 @@
                                     },
                                     "enabled": true,
                                     "label": "~/desarrollo/gatewaystore1"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/etc/postgresql/11/main/postgresql.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/etc/postgresql/11/main/postgresql.conf"
+                                },
+                                {
+                                    "id": "openRecentFile",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "path": "/etc/postgresql/11/main/pg_hba.conf",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "/etc/postgresql/11/main/pg_hba.conf"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -110,7 +135,8 @@
                     },
                     {
                         "id": "workbench.action.files.saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -586,7 +612,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1467,5 +1494,6 @@
             }
         },
         "openedWindows": []
-    }
+    },
+    "pickerWorkingDir": "/etc/postgresql/11/main"
 }
