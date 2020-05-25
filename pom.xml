@@ -681,7 +681,7 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/gatewaystore</url>
+                        <url>jdbc:postgresql://70.37.100.3:5432/gatewaystore</url>
                         <defaultSchemaName></defaultSchemaName>
                         <username>gatewaystore</username>
                         <password>andres</password>
